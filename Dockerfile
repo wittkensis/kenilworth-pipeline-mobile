@@ -6,15 +6,16 @@ RUN apk add --no-cache python3 make g++ sqlite-dev
 FROM base AS deps
 WORKDIR /app
 COPY package*.json ./
-# Force devDependencies install — Coolify injects NODE_ENV=production at build time
-RUN npm ci --include=dev
+# NODE_ENV=development forces devDependencies install
+# (Coolify injects NODE_ENV=production at build time which skips devDeps)
+RUN NODE_ENV=development npm ci
 
 FROM base AS builder
 WORKDIR /app
-ENV NODE_ENV=development
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm run build
+# Explicit production build so Next.js uses production React builds
+RUN NODE_ENV=production npm run build
 
 FROM base AS runner
 WORKDIR /app
