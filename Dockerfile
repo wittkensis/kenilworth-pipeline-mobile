@@ -6,10 +6,12 @@ RUN apk add --no-cache python3 make g++ sqlite-dev
 FROM base AS deps
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+# Force devDependencies install — Coolify injects NODE_ENV=production at build time
+RUN npm ci --include=dev
 
 FROM base AS builder
 WORKDIR /app
+ENV NODE_ENV=development
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
