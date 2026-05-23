@@ -1,4 +1,6 @@
 .next
 node_modules
 .env.local
-database/*.db
+database/
+.DS_Store
+next-env.d.ts
