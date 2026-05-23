@@ -19,6 +19,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
+  // Root → pipeline for authenticated users
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL('/pipeline', request.url));
+  }
+
   return NextResponse.next();
 }
 
