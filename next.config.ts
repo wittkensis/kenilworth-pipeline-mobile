@@ -1,9 +1,13 @@
 import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
-  // Exclude better-sqlite3 from client bundle
   serverExternalPackages: ['better-sqlite3'],
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+    return config;
+  },
 };
 
 export default nextConfig;
