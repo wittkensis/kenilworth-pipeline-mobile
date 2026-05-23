@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-folk-cream: #F5F1E8;
+  --color-folk-sand: #E8DCC8;
+  --color-folk-stone: #8B7E6A;
+  --color-folk-charcoal: #2D2A26;
+  --color-folk-ink: #1A1816;
+}
+
+:root {
+  --folk-cream: #F5F1E8;
+  --folk-sand: #E8DCC8;
+  --folk-stone: #8B7E6A;
+  --folk-charcoal: #2D2A26;
+  --folk-ink: #1A1816;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--folk-ink);
+  color: var(--folk-cream);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Prevent iOS input zoom */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="url"],
+select,
+textarea {
+  font-size: 16px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--folk-stone);
+  outline-offset: 2px;
+}
