@@ -161,7 +161,7 @@ Excitement colors:
 ## Deployment
 
 - **Coolify app UUID:** `x14fj17alowt6v1vo7nvuv02`
-- **Repo:** `wittkensis/kenilworth-pipeline-mobile` (public — no secrets in code)
+- **Repo:** `wittkensis/kenilworth-pipeline` (public — no secrets in code)
 - **Required env vars in Coolify:** `APP_PASSWORD`
 - **Persistent volume:** `/data` on host → `/data` in container. Record inserted directly into Coolify's PostgreSQL `local_persistent_volumes` table (resource_id=4, resource_type=`App\Models\Application`) because the Coolify API's persistent storage endpoints return 404.
 - **Database path:** `/data/pipeline.db` (set via `DATABASE_PATH` env var in Dockerfile)

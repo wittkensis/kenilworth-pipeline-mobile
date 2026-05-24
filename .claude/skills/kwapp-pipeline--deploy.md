@@ -23,7 +23,7 @@ curl -s -X POST \
 | Field | Value |
 |-------|-------|
 | App UUID | `x14fj17alowt6v1vo7nvuv02` |
-| Repo | `wittkensis/kenilworth-pipeline-mobile` (public) |
+| Repo | `wittkensis/kenilworth-pipeline` (public) |
 | Branch | `main` |
 | VPS | `76.13.102.88` |
 | URL | `pipeline.ericwittke.com` |
