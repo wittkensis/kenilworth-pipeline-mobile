@@ -190,3 +190,15 @@ Deploy flow: push to `main` → Coolify auto-deploys → container replaces in-p
 4. **`redirect()` in `page.tsx` during static generation causes `<Html> should not be imported outside of pages/_document` in Next.js 15.** Don't call `redirect()` in page components. Do root redirects in middleware only.
 
 5. **Coolify API `/persistentstorage` endpoints return 404.** Use direct PostgreSQL insertion instead (see Deployment section above).
+
+---
+
+## Load at session start
+
+Open `.claude/skills/kwapp-pipeline--deploy.md` immediately at every session start.
+
+## Skills
+
+| Trigger | Skill | Purpose |
+|---------|-------|---------|
+| deploy, push, coolify, go live | `kwapp-pipeline--deploy` | Deploy automation |
