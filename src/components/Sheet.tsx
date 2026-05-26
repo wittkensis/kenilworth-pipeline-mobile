@@ -32,10 +32,13 @@ export function Sheet({ open, onClose, title, children }: SheetProps) {
       onClick={(e) => e.target === backdropRef.current && onClose()}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
       {/* Sheet */}
-      <div className="relative bg-folk-charcoal rounded-t-2xl max-h-[92dvh] flex flex-col">
+      <div
+        className="relative bg-folk-charcoal rounded-t-2xl max-h-[92dvh] flex flex-col"
+        style={{ animation: "slide-up 250ms cubic-bezier(0.32,0.72,0,1) forwards" }}
+      >
         {/* Handle */}
         <div className="flex justify-center pt-3 pb-1 shrink-0">
           <div className="w-10 h-1 rounded-full bg-folk-stone/30" />

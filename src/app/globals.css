@@ -47,3 +47,8 @@ textarea {
   outline: 2px solid var(--folk-stone);
   outline-offset: 2px;
 }
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

@@ -15,7 +15,7 @@ export function BottomNav({ onAdd }: BottomNavProps) {
       <div className="flex items-center justify-around px-2 h-16">
         <Link
           href="/pipeline"
-          className={`flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-colors ${
+          className={`flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-colors active:opacity-70 ${
             pathname === '/pipeline' ? 'text-folk-cream' : 'text-folk-stone'
           }`}
         >
@@ -40,7 +40,7 @@ export function BottomNav({ onAdd }: BottomNavProps) {
 
         <Link
           href="/companies"
-          className={`flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-colors ${
+          className={`flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-colors active:opacity-70 ${
             pathname === '/companies' ? 'text-folk-cream' : 'text-folk-stone'
           }`}
         >
